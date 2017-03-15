@@ -13,9 +13,10 @@ AFRAME.registerComponent('set-image', {
   },
 
   init: function () {
-    var data = this.data;
-    var el = this.el;
-    var position = '0 -1 -4';
+    var data = this.data,
+      el = this.el,
+      position = '0 -1 -4',
+      imageToLoad = '#tour_02';
 
     this.setupFadeAnimation();
 
@@ -27,7 +28,7 @@ AFRAME.registerComponent('set-image', {
         // Set image.
         data.target.setAttribute('material', 'src', data.src);
         el.setAttribute('position', position);
-        data.src = '#flowers';
+        data.src = imageToLoad;
         console.log('__element', el, data);
       }, data.dur);
     });
