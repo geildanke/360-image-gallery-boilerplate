@@ -31,3 +31,6 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
+.index.html.swp
+.main.js.swp
+components/.set-image.js.swp
