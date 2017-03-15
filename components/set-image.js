@@ -15,6 +15,7 @@ AFRAME.registerComponent('set-image', {
   init: function () {
     var data = this.data;
     var el = this.el;
+    var position = '0 -1 -4';
 
     this.setupFadeAnimation();
 
@@ -25,7 +26,9 @@ AFRAME.registerComponent('set-image', {
       setTimeout(function () {
         // Set image.
         data.target.setAttribute('material', 'src', data.src);
-        el.setAttribute('position', '0 -1 -4');
+        el.setAttribute('position', position);
+        data.src = '#flowers';
+        console.log('__element', el, data);
       }, data.dur);
     });
   },

@@ -10,7 +10,6 @@
     <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
     <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
     <script src="components/set-image.js"></script>
-    <script src="main.js"></script>
   </head>
   <body>
     <a-scene>
@@ -20,28 +19,22 @@
         <img id="entrance" crossorigin="anonymous" src="assets/R0010314_20170310134745.jpg">
         <img id="downstairs" crossorigin="anonymous" src="assets/R0010313_20170310134717.jpg">
         <img id="flowers" crossorigin="anonymous" src="assets/R0010312_20170310134648.jpg">
-
-        <!-- Image link template to be reused. -->
-        <script id="link" type="text/html">
-          <a-entity class="link"
-            geometry="primitive: plane; height: 0.2345; width: 1"
-            material="shader: flat; src: ${thumb}"
-            event-set__1="_event: mousedown; scale: 1 1 1"
-            event-set__2="_event: mouseup; scale: 1.2 1.2 1"
-            event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
-            event-set__4="_event: mouseleave; scale: 1 1 1"
-            set-image="on: click; target: #image-360; src: ${src}; dur: 1000;"
-            sound="on: click; src: #click-sound"></a-entity>
-        </script>
       </a-assets>
 
       <!-- 360-degree image. -->
       <a-sky id="image-360" radius="10" src="#entrance" phi-start="50"></a-sky>
 
       <!-- Image links. -->
-      <a-entity id="links" layout="type: line; margin: 1.5" position="0 -2 -4">
-        <a-entity template="src: #link" data-src="#downstairs" data-thumb="#entrance-thumb"></a-entity>
-      </a-entity>
+      <a-entity id="link" class="link"
+          layout="type: line; margin: 1.5" position="0 -2 -4"
+          geometry="primitive: plane; height: 0.2345; width: 1"
+          material="shader: flat; src: #entrance-thumb"
+          event-set__1="_event: mousedown; scale: 1 1 1"
+          event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+          event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+          event-set__4="_event: mouseleave; scale: 1 1 1"
+          set-image="on: click; target: #image-360; src: #downstairs; dur: 1000;"
+          sound="on: click; src: #click-sound"></a-entity>
 
       <!-- Camera + cursor. -->
       <a-entity camera look-controls>
