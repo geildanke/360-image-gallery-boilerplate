@@ -19,7 +19,5 @@
     "vr",
     "webvr"
   ],
-  "dependencies": {
-    "zepto": "^1.2.0"
-  }
+  "dependencies": {}
 }
