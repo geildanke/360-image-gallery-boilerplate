@@ -83,15 +83,14 @@ AFRAME.registerComponent('set-image', {
         nextImage: '#tour_9',
         nextPosition: '-4 -1 0',
         nextRotation: '0 90 0',
-        nextPhiStart: 50,
+        nextPhiStart: 0,
         nextImageKey: 9
-      },
-      {
+      },      {
         key: 9,
         nextImage: '#tour_10',
         nextPosition: '-4 -1 0',
         nextRotation: '0 90 0',
-        nextPhiStart: 0,
+        nextPhiStart: 90,
         nextImageKey: 10
       },
       {
@@ -99,7 +98,7 @@ AFRAME.registerComponent('set-image', {
         nextImage: '#tour_11',
         nextPosition: '-4 -1 0',
         nextRotation: '0 90 0',
-        nextPhiStart: 0,
+        nextPhiStart: 310,
         nextImageKey: 11
       },
       {
@@ -115,15 +114,15 @@ AFRAME.registerComponent('set-image', {
         nextImage: '#tour_13',
         nextPosition: '-4 -1 0',
         nextRotation: '0 90 0',
-        nextPhiStart: 0,
+        nextPhiStart: 280,
         nextImageKey: 13
       },
       {
         key: 13,
-        nextImage: '#tour_14',
+        nextImage: '#tour_0',
         nextPosition: '-3 -1 0',
         nextRotation: '0 0 0',
-        nextPhiStart: 50,
+        nextPhiStart: 290,
         nextImageKey: 0
       }
     ],
