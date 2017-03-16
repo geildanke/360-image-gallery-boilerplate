@@ -13,10 +13,32 @@ AFRAME.registerComponent('set-image', {
   },
 
   init: function () {
+    var content = [
+      {
+        key: 0,
+        image: '#tour_0',
+        position: '0 -2 -4',
+        phiStart: 50,
+        nextImageKey: 1
+      },
+      {
+        key: 1,
+        image: '#tour_1',
+        position: '0 -1 -4',
+        phiStart: 50,
+        nextImageKey: 2
+      },
+      {
+        key: 2,
+        image: '#tour_2',
+        position: '0 -2 -4',
+        phiStart: 50,
+        nextImageKey: 1
+      }
+    ];
     var data = this.data,
       el = this.el,
-      position = '0 -1 -4',
-      imageToLoad = '#tour_02';
+      imageToLoad = '#tour_2';
 
     this.setupFadeAnimation();
 
@@ -26,9 +48,10 @@ AFRAME.registerComponent('set-image', {
       // Wait for fade to complete.
       setTimeout(function () {
         // Set image.
-        data.target.setAttribute('material', 'src', data.src);
-        el.setAttribute('position', position);
-        data.src = imageToLoad;
+        data.target.setAttribute('material', 'src', content[data.key].image);
+        el.setAttribute('position', content[data.key].position);
+        data.src = content[data.key].image;
+        data.key = content[data.key].nextImageKey;
         console.log('__element', el, data);
       }, data.dur);
     });
