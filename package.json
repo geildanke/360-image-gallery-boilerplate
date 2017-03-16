@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "budo": "^7.0.0",
-    "ghpages": "0.0.3"
+    "ghpages": "0.0.10"
   },
   "keywords": [
     "aframe",
@@ -18,5 +18,6 @@
     "aframe-scene",
     "vr",
     "webvr"
-  ]
+  ],
+  "dependencies": {}
 }

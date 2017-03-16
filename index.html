@@ -4,47 +4,49 @@
     <meta charset="utf-8">
     <title>360&deg; Image Gallery</title>
     <meta name="description" content="360&deg; Image Gallery - A-Frame">
-    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
-    <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
-    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
-    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
-    <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+    <!-- <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script> -->
+    <script src="aframe-master.js"></script>
+    <!-- <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script> -->
+    <script src="aframe-animation-component.js"></script>
+    <!-- <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script> -->
+    <script src="aframe-event-set-component.js"></script>
     <script src="components/set-image.js"></script>
   </head>
   <body>
     <a-scene>
       <a-assets>
-        <img id="city" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
-        <img id="city-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">
-        <img id="cubes-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg">
-        <img id="sechelt-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
-        <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-        <img id="cubes" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
-        <img id="sechelt" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
-
-        <!-- Image link template to be reused. -->
-        <script id="link" type="text/html">
-          <a-entity class="link"
-            geometry="primitive: plane; height: 1; width: 1"
-            material="shader: flat; src: ${thumb}"
-            event-set__1="_event: mousedown; scale: 1 1 1"
-            event-set__2="_event: mouseup; scale: 1.2 1.2 1"
-            event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
-            event-set__4="_event: mouseleave; scale: 1 1 1"
-            set-image="on: click; target: #image-360; src: ${src}"
-            sound="on: click; src: #click-sound"></a-entity>
-        </script>
+        <img id="button" crossorigin="anonymous" src="assets/button.png">
+        <audio id="click-sound" crossorigin="anonymous" src="assets/click.ogg"></audio>
+        <img id="tour_0" crossorigin="anonymous" src="assets/R0010314_20170310134745.jpg">
+        <img id="tour_1" crossorigin="anonymous" src="assets/R0010313_20170310134717.jpg">
+        <img id="tour_2" crossorigin="anonymous" src="assets/R0010312_20170310134648.jpg">
+        <img id="tour_3" crossorigin="anonymous" src="assets/R0010311_20170310134626.jpg">
+        <img id="tour_4" crossorigin="anonymous" src="assets/R0010310_20170310134610.jpg">
+        <img id="tour_5" crossorigin="anonymous" src="assets/R0010309_20170310134553.jpg">
+        <img id="tour_6" crossorigin="anonymous" src="assets/R0010308_20170310134530.jpg">
+        <img id="tour_7" crossorigin="anonymous" src="assets/R0010307_20170310134508.jpg">
+        <img id="tour_8" crossorigin="anonymous" src="assets/R0010306_20170310134449.jpg">
+        <img id="tour_9" crossorigin="anonymous" src="assets/R0010305_20170310134425.jpg">
+        <img id="tour_10" crossorigin="anonymous" src="assets/R0010304_20170310134403.jpg">
+        <img id="tour_11" crossorigin="anonymous" src="assets/R0010303_20170310134341.jpg">
+        <img id="tour_12" crossorigin="anonymous" src="assets/R0010302_20170310134322.jpg">
+        <img id="tour_13" crossorigin="anonymous" src="assets/R0010301_20170310134302.jpg">
       </a-assets>
 
       <!-- 360-degree image. -->
-      <a-sky id="image-360" radius="10" src="#city"></a-sky>
+      <a-sky id="image-360" radius="10" src="#tour_0" phi-start="290" key="13"></a-sky>
 
       <!-- Image links. -->
-      <a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 -4">
-        <a-entity template="src: #link" data-src="#cubes" data-thumb="#cubes-thumb"></a-entity>
-        <a-entity template="src: #link" data-src="#city" data-thumb="#city-thumb"></a-entity>
-        <a-entity template="src: #link" data-src="#sechelt" data-thumb="#sechelt-thumb"></a-entity>
-      </a-entity>
+      <a-entity id="link" class="link"
+          layout="type: line; margin: 1.5" position="-3 -1 0" rotation="0 90 0"
+          geometry="primitive: plane; height: 0.2345; width: 1"
+          material="shader: flat; src: #button"
+          event-set__1="_event: mousedown; scale: 1 1 1"
+          event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+          event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+          event-set__4="_event: mouseleave; scale: 1 1 1"
+          set-image="on: click; target: #image-360; src: #tour_1; dur: 750; key: 0"
+          sound="on: click; src: #click-sound"></a-entity>
 
       <!-- Camera + cursor. -->
       <a-entity camera look-controls>
