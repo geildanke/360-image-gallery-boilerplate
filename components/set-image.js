@@ -144,7 +144,7 @@ AFRAME.registerComponent('set-image', {
         el.setAttribute('rotation', content[data.key].nextRotation);
         data.src = content[data.key].nextImage;
         data.key = content[data.key].nextImageKey;
-        console.log('__Current Config__', content[data.key]);
+        // console.log('__Current Config__', content[data.key]);
       }, data.dur);
     });
   },
