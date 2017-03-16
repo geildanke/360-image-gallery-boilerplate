@@ -17,14 +17,16 @@ AFRAME.registerComponent('set-image', {
       {
         key: 0,
         image: '#tour_0',
-        position: '0 -2 -4',
-        phiStart: 50,
+        position: '-3 -1 0',
+        rotation: '0 90 0',
+        phiStart: 290,
         nextImageKey: 1
       },
       {
         key: 1,
         image: '#tour_1',
-        position: '0 -1 -4',
+        position: '0 0 -3',
+        rotation: '0 0 0',
         phiStart: 50,
         nextImageKey: 2
       },
@@ -32,6 +34,7 @@ AFRAME.registerComponent('set-image', {
         key: 2,
         image: '#tour_2',
         position: '0 -2 -4',
+        rotation: '0 0 0',
         phiStart: 50,
         nextImageKey: 3
       },
@@ -39,6 +42,7 @@ AFRAME.registerComponent('set-image', {
         key: 3,
         image: '#tour_3',
         position: '0 -2 -4',
+        rotation: '0 0 0',
         phiStart: 50,
         nextImageKey: 4
       },
@@ -46,6 +50,7 @@ AFRAME.registerComponent('set-image', {
         key: 4,
         image: '#tour_4',
         position: '0 -2 -4',
+        rotation: '0 0 0',
         phiStart: 50,
         nextImageKey: 5
       },
@@ -53,6 +58,7 @@ AFRAME.registerComponent('set-image', {
         key: 5,
         image: '#tour_5',
         position: '0 -2 -4',
+        rotation: '0 0 0',
         phiStart: 50,
         nextImageKey: 6
       },
@@ -60,6 +66,7 @@ AFRAME.registerComponent('set-image', {
         key: 6,
         image: '#tour_6',
         position: '0 -2 -4',
+        rotation: '0 0 0',
         phiStart: 50,
         nextImageKey: 7
       },
@@ -67,6 +74,7 @@ AFRAME.registerComponent('set-image', {
         key: 7,
         image: '#tour_7',
         position: '0 -2 -4',
+        rotation: '0 0 0',
         phiStart: 50,
         nextImageKey: 8
       },
@@ -74,6 +82,7 @@ AFRAME.registerComponent('set-image', {
         key: 8,
         image: '#tour_8',
         position: '0 -2 -4',
+        rotation: '0 0 0',
         phiStart: 50,
         nextImageKey: 9
       },
@@ -81,6 +90,7 @@ AFRAME.registerComponent('set-image', {
         key: 9,
         image: '#tour_9',
         position: '0 -2 -4',
+        rotation: '0 0 0',
         phiStart: 50,
         nextImageKey: 10
       },
@@ -88,6 +98,7 @@ AFRAME.registerComponent('set-image', {
         key: 10,
         image: '#tour_10',
         position: '0 -2 -4',
+        rotation: '0 0 0',
         phiStart: 50,
         nextImageKey: 11
       },
@@ -95,6 +106,7 @@ AFRAME.registerComponent('set-image', {
         key: 11,
         image: '#tour_11',
         position: '0 -2 -4',
+        rotation: '0 0 0',
         phiStart: 50,
         nextImageKey: 12
       },
@@ -102,6 +114,7 @@ AFRAME.registerComponent('set-image', {
         key: 12,
         image: '#tour_12',
         position: '0 -2 -4',
+        rotation: '0 0 0',
         phiStart: 50,
         nextImageKey: 13
       },
@@ -109,6 +122,7 @@ AFRAME.registerComponent('set-image', {
         key: 13,
         image: '#tour_13',
         position: '0 -2 -4',
+        rotation: '0 0 0',
         phiStart: 50,
         nextImageKey: 0
       }
@@ -128,6 +142,7 @@ AFRAME.registerComponent('set-image', {
         data.target.setAttribute('phi-start', content[data.key].phiStart);
         // Set button position and configure button to load next image on click.
         el.setAttribute('position', content[data.key].position);
+        el.setAttribute('rotation', content[data.key].rotation);
         data.src = content[data.key].image;
         data.key = content[data.key].nextImageKey;
       }, data.dur);
