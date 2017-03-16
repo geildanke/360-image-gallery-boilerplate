@@ -16,114 +16,114 @@ AFRAME.registerComponent('set-image', {
     var content = [
       {
         key: 0,
-        image: '#tour_0',
-        position: '-3 -1 0',
-        rotation: '0 90 0',
-        phiStart: 290,
+        nextImage: '#tour_1',
+        nextPosition: '0 0 -3',
+        nextRotation: '0 0 0',
+        nextPhiStart: 290,
         nextImageKey: 1
       },
       {
         key: 1,
-        image: '#tour_1',
-        position: '0 0 -3',
-        rotation: '0 0 0',
-        phiStart: 50,
+        nextImage: '#tour_2',
+        nextPosition: '0 0 -3',
+        nextRotation: '0 0 0',
+        nextPhiStart: 0,
         nextImageKey: 2
       },
       {
         key: 2,
-        image: '#tour_2',
-        position: '0 -2 -4',
-        rotation: '0 0 0',
-        phiStart: 50,
+        nextImage: '#tour_3',
+        nextPosition: '0 -2 -4',
+        nextRotation: '0 0 0',
+        nextPhiStart: 50,
         nextImageKey: 3
       },
       {
         key: 3,
-        image: '#tour_3',
-        position: '0 -2 -4',
-        rotation: '0 0 0',
-        phiStart: 50,
+        nextImage: '#tour_4',
+        nextPosition: '0 -2 -4',
+        nextRotation: '0 0 0',
+        nextPhiStart: 50,
         nextImageKey: 4
       },
       {
         key: 4,
-        image: '#tour_4',
-        position: '0 -2 -4',
-        rotation: '0 0 0',
-        phiStart: 50,
+        nextImage: '#tour_5',
+        nextPosition: '0 -2 -4',
+        nextRotation: '0 0 0',
+        nextPhiStart: 50,
         nextImageKey: 5
       },
       {
         key: 5,
-        image: '#tour_5',
-        position: '0 -2 -4',
-        rotation: '0 0 0',
-        phiStart: 50,
+        nextImage: '#tour_6',
+        nextPosition: '0 -2 -4',
+        nextRotation: '0 0 0',
+        nextPhiStart: 50,
         nextImageKey: 6
       },
       {
         key: 6,
-        image: '#tour_6',
-        position: '0 -2 -4',
-        rotation: '0 0 0',
-        phiStart: 50,
+        nextImage: '#tour_7',
+        nextPosition: '0 -2 -4',
+        nextRotation: '0 0 0',
+        nextPhiStart: 50,
         nextImageKey: 7
       },
       {
         key: 7,
-        image: '#tour_7',
-        position: '0 -2 -4',
-        rotation: '0 0 0',
-        phiStart: 50,
+        nextImage: '#tour_8',
+        nextPosition: '0 -2 -4',
+        nextRotation: '0 0 0',
+        nextPhiStart: 50,
         nextImageKey: 8
       },
       {
         key: 8,
-        image: '#tour_8',
-        position: '0 -2 -4',
-        rotation: '0 0 0',
-        phiStart: 50,
+        nextImage: '#tour_9',
+        nextPosition: '0 -2 -4',
+        nextRotation: '0 0 0',
+        nextPhiStart: 50,
         nextImageKey: 9
       },
       {
         key: 9,
-        image: '#tour_9',
-        position: '0 -2 -4',
-        rotation: '0 0 0',
-        phiStart: 50,
+        nextImage: '#tour_10',
+        nextPosition: '0 -2 -4',
+        nextRotation: '0 0 0',
+        nextPhiStart: 50,
         nextImageKey: 10
       },
       {
         key: 10,
-        image: '#tour_10',
-        position: '0 -2 -4',
-        rotation: '0 0 0',
-        phiStart: 50,
+        nextImage: '#tour_11',
+        nextPosition: '0 -2 -4',
+        nextRotation: '0 0 0',
+        nextPhiStart: 50,
         nextImageKey: 11
       },
       {
         key: 11,
-        image: '#tour_11',
-        position: '0 -2 -4',
-        rotation: '0 0 0',
-        phiStart: 50,
+        nextImage: '#tour_12',
+        nextPosition: '0 -2 -4',
+        nextRotation: '0 0 0',
+        nextPhiStart: 50,
         nextImageKey: 12
       },
       {
         key: 12,
-        image: '#tour_12',
-        position: '0 -2 -4',
-        rotation: '0 0 0',
-        phiStart: 50,
+        nextImage: '#tour_13',
+        nextPosition: '0 -2 -4',
+        nextRotation: '0 0 0',
+        nextPhiStart: 50,
         nextImageKey: 13
       },
       {
         key: 13,
-        image: '#tour_13',
-        position: '0 -2 -4',
-        rotation: '0 0 0',
-        phiStart: 50,
+        nextImage: '#tour_14',
+        nextPosition: '-3 -1 0',
+        nextRotation: '0 0 0',
+        nextPhiStart: 50,
         nextImageKey: 0
       }
     ],
@@ -138,13 +138,14 @@ AFRAME.registerComponent('set-image', {
       // Wait for fade to complete.
       setTimeout(function () {
         // Set image and image phi start.
-        data.target.setAttribute('material', 'src', content[data.key].image);
-        data.target.setAttribute('phi-start', content[data.key].phiStart);
+        data.target.setAttribute('material', 'src', content[data.key].nextImage);
+        data.target.setAttribute('phi-start', content[data.key].nextPhiStart);
         // Set button position and configure button to load next image on click.
-        el.setAttribute('position', content[data.key].position);
-        el.setAttribute('rotation', content[data.key].rotation);
-        data.src = content[data.key].image;
+        el.setAttribute('position', content[data.key].nextPosition);
+        el.setAttribute('rotation', content[data.key].nextRotation);
+        data.src = content[data.key].nextImage;
         data.key = content[data.key].nextImageKey;
+        console.log('__Current Config__', content[data.key]);
       }, data.dur);
     });
   },
